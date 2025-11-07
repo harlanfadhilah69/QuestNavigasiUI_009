@@ -42,40 +42,36 @@ fun FormIsian(
                     containerColor = colorResource(id = R.color.teal_700))
             ) }
     ) { isiRuang ->
-        Column(
-            modifier = Modifier.padding(paddingValues = isiRuang),
+        Column (modifier = Modifier.padding(paddingValues = isiRuang),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+            horizontalAlignment = Alignment.CenterHorizontally) {
             OutlinedTextField(
                 value = "",
                 singleLine = true,
                 modifier = Modifier
                     .padding(top = 20.dp)
                     .width(width = 250.dp),
-                label = { Text(text = "Nama Lengkap") },
+                label = {Text(text = "Nama Lengkap")},
                 onValueChange = {},
             )
-            HorizontalDivider(
-                modifier = Modifier
-                    .padding(all = 20.dp)
-                    .width(width = 250.dp), thickness = Thickness, color = Color.Red
-            )
-            Row {
-                jenisK.forEach { item ->
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+            HorizontalDivider(modifier = Modifier
+                .padding(all = 20.dp)
+                .width(width = 250.dp), thickness = Thickness,color = Color.Red)
+            Row{
+                jenisK.forEach {
+                    item->
+                    Row (verticalAlignment = Alignment.CenterVertically){
                         RadioButton(
                             selected = false,
-                            onClick = { item }
+                            onClick = {item}
                         )
                         Text(text = item)
                     }
                 }
             }
-            HorizontalDivider(
-                modifier = Modifier
-                    .padding(all = 20.dp)
-                    .width(width = 250.dp),
+            HorizontalDivider(modifier = Modifier
+                .padding(all = 20.dp)
+                .width(width = 250.dp),
                 thickness = 1.dp,
                 color = Color.Red
             )
@@ -84,9 +80,10 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier
                     .width(width = 250.dp),
-                label = { Text(text = "Alamat") },
+                label = {Text(text = "Alamat")},
                 onValueChange = {},
             )
+            Spacer(modifier = Modifier.height(height = 30.dp))
         }
     }
 }
